@@ -35,10 +35,10 @@ As a sanity check, look through your list of boarding passes. What is the highes
 def part1(data):
     max_val = 0
     for i in data:
-        val = int(i[2:], 10) #base10 to account for the *8 and +5
+        val = int(i[2:], 2) 
         if val > max_val:
             max_val = val
-    return int(f"{max_val}", 2)
+    return max_val
 
 print(f"The max seatID equals {part1(data)}")
 
@@ -55,7 +55,7 @@ What is the ID of your seat?
 def part2(data):
     int_vals = []
     for i in data:
-        int_vals.append(int(f"{int(i[2:], 10)}", 2))
+        int_vals.append(int(i[2:], 2))
     
     ids = sorted(int_vals)
 
